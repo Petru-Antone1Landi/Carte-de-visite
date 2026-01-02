@@ -1,18 +1,10 @@
-import { createMarker } from "./marker.js";
-
 window.addEventListener("DOMContentLoaded", () => {
   const scene = document.createElement("a-scene");
 
-  scene.setAttribute("embedded", "");
-  scene.setAttribute("arjs", "sourceType: webcam;");
-
-  const marker = createMarker();
-  scene.appendChild(marker);
-
-  // Caméra
-  const camera = document.createElement("a-entity");
-  camera.setAttribute("camera", "");
-  scene.appendChild(camera);
+  scene.innerHTML = `
+    <a-box position="0 0 -3" rotation="0 45 0" scale="1 1 1" color="red"></a-box>
+    <a-camera></a-camera>
+  `;
 
   document.body.appendChild(scene);
 });
